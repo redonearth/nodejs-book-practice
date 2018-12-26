@@ -1,5 +1,3 @@
-import { join } from "path";
-
 // 사용자 이름 눌렀을 때 댓글 로딩
 [].forEach.call(document.querySelectorAll('#user-list tr'), function (el) {
   el.addEventListener('click', function () {
