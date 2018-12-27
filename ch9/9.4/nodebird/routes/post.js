@@ -39,7 +39,7 @@ router.post('/', isLoggedIn, upload2.none(), async (req, res, next) => {
       img: req.body.url,
       userId: req.user.id,
     });
-    const Hashtags = req.body.content.match(/#[^\s]*/g);
+    const hashtags = req.body.content.match(/#[^\s]*/g);
     if (hashtags) {
       const result = await Promise.all(hashtags.map(tag => Hashtag.findOrCreate({
         where: { title: tag.slice(1).toLowerCase() },
