@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
   res.render('index');
 });
 router.get('/autocomplete/:query', (req, res, next) => {
-  googleMapsClient.placesQueryComplete({
+  googleMapsClient.placesQueryAutoComplete({
     input: req.params.query,
     language: 'ko',
   }, (err, response) => {
